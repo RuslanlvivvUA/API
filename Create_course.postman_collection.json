@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "807d4911-4c08-4af0-afbb-f31f911c102f",
+		"name": "Create course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "db08fbaf-21a9-4f1b-9307-b0cd22c05754",
+			"name": "POST sign_up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8134b3c-b04d-4b83-9af1-2363eee22492",
+						"type": "text/javascript",
+						"exec": [
+							"eval(globals.postmanBDD); \rdescribe('Get customer info', () => {\rit('should return a valid response', () => { \r    response.should.have.status(200); \r    response.should.be.json; \r    response.body.should.not.be.empty;\r });\rit('should set the Location header', () => { \r    response.should.not.have.header('Location');\r\r });\rit('should match the customer schema', () => {\r    var customerSchema = JSON.parse(environment.customerSchema); \r    response.body.should.have.schema(customerSchema);\r});\r});\r\r"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Ruuu",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "ssslllaaan",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ukr{{$randomInt}}@net.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "131313",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/sign_up",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "51360120-52ac-420d-8e86-dbb187bcb533",
+			"name": "GET category/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://beta.diprella.com/api/category/list",
+					"protocol": "https",
+					"host": [
+						"beta",
+						"diprella",
+						"com"
+					],
+					"path": [
+						"api",
+						"category",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d2f1e5a8-f7bd-43ff-9dfd-f9c94e3e88b4",
+			"name": "GET courses/list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe013397-ddea-48c1-bf95-6551d9c19246",
+						"type": "text/javascript",
+						"exec": [
+							"eval(globals.postmanBDD); \rdescribe('Get customer info', () => {\rit('should return a valid response', () => { \r    response.should.have.status(200); \r    response.should.be.json; \r    response.body.should.not.be.empty;\r });\rit('should set the Location header', () => { \r    response.should.have.header('Location');\r\r });\rit('should match the customer schema', () => {\r    var customerSchema = JSON.parse(environment.customerSchema); \r    response.body.should.have.schema(customerSchema);\r});\r});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://beta.diprella.com/api/courses/list",
+					"protocol": "https",
+					"host": [
+						"beta",
+						"diprella",
+						"com"
+					],
+					"path": [
+						"api",
+						"courses",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "baae01ac-379a-4141-8cd4-ac1e32d8246a",
+			"name": "GET course/progress?page=1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1OSwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzMzgzNjI5MSwiZXhwIjoxNTM2NDY0MjkxLCJuYmYiOjE1MzM4MzYyOTEsImp0aSI6IkpMVktBV0dvWFdtVEQ4WVIifQ.yuoZdOz_2WvuDvCuZFfvDYxzVeUSQdUYhyqf745f-3s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://beta.diprella.com/api/profile/course/progress?page=1",
+					"protocol": "https",
+					"host": [
+						"beta",
+						"diprella",
+						"com"
+					],
+					"path": [
+						"api",
+						"profile",
+						"course",
+						"progress"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "dbee9cfb-6d00-4d9b-8301-09c533cc3cad",
+			"name": "PUT /profile/banner/view",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "613893d2-f739-4303-91f5-bb49b80d5a45",
+						"type": "text/javascript",
+						"exec": [
+							"eval(globals.postmanBDD); \rdescribe('Get customer info', () => {\rit('should return a valid response', () => { \r    response.should.have.status(200); \r    response.should.be.json; \r    response.body.should.not.be.empty;\r });\rit('should set the Location header', () => { \r    response.should.have.header('Location');\r\r });\rit('should match the customer schema', () => {\r    var customerSchema = JSON.parse(environment.customerSchema); \r    response.body.should.have.schema(customerSchema);\r});\r});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1OSwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzMzgzNjI5MSwiZXhwIjoxNTM2NDY0MjkxLCJuYmYiOjE1MzM4MzYyOTEsImp0aSI6IkpMVktBV0dvWFdtVEQ4WVIifQ.yuoZdOz_2WvuDvCuZFfvDYxzVeUSQdUYhyqf745f-3s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "origin",
+						"value": "https://beta.diprella.com"
+					},
+					{
+						"key": "accept-encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY2LCJpc3MiOiJodHRwczovL2JldGEuZGlwcmVsbGEuY29tL2FwaS9sb2dpbiIsImlhdCI6MTUzMzgzNDY3NCwiZXhwIjoxNTM2NDYyNjc0LCJuYmYiOjE1MzM4MzQ2NzQsImp0aSI6IlYyRGhzVjJ0REdwUHZtSXIifQ.rIEf95vsBDpZ1piY9rLK5u0ZwkR6uTfQS-OS4O_X65Y"
+					},
+					{
+						"key": "cookie",
+						"value": "__cfduid=db54747324083b6affcc81b4fa7280e421532623150; io=qL-tuCbnnuW19twgAAEN"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "authority",
+						"value": "beta.diprella.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://beta.diprella.com/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"banner_view\":false}"
+				},
+				"url": {
+					"raw": "https://beta.diprella.com/api/profile/banner/view",
+					"protocol": "https",
+					"host": [
+						"beta",
+						"diprella",
+						"com"
+					],
+					"path": [
+						"api",
+						"profile",
+						"banner",
+						"view"
+					]
+				},
+				"description": "Generated from a curl request: \ncurl 'https://beta.diprella.com/api/profile/banner/view' -X PUT -H 'origin: https://beta.diprella.com' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: en-US,en;q=0.9' -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY2LCJpc3MiOiJodHRwczovL2JldGEuZGlwcmVsbGEuY29tL2FwaS9sb2dpbiIsImlhdCI6MTUzMzgzNDY3NCwiZXhwIjoxNTM2NDYyNjc0LCJuYmYiOjE1MzM4MzQ2NzQsImp0aSI6IlYyRGhzVjJ0REdwUHZtSXIifQ.rIEf95vsBDpZ1piY9rLK5u0ZwkR6uTfQS-OS4O_X65Y' -H 'cookie: __cfduid=db54747324083b6affcc81b4fa7280e421532623150; io=qL-tuCbnnuW19twgAAEN' -H 'pragma: no-cache' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' -H 'content-type: application/json' -H 'accept: application/json' -H 'cache-control: no-cache' -H 'authority: beta.diprella.com' -H 'referer: https://beta.diprella.com/' --data-binary '{\\\"banner_view\\\":false}' --compressed"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ced03d73-8c74-4aee-9dc7-1c298da6f333",
+			"name": "POST course/create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78f2a745-c4b0-4948-a6db-f64050df7ced",
+						"type": "text/javascript",
+						"exec": [
+							"eval(globals.postmanBDD); \rdescribe('Get customer info', () => {\rit('should return a valid response', () => { \r    response.should.have.status(200); \r    response.should.be.json; \r    response.body.should.not.be.empty;\r });\rit('should set the Location header', () => { \r    response.should.have.header('Location');\r\r });\rit('should match the customer schema', () => {\r    var customerSchema = JSON.parse(environment.customerSchema); \r    response.body.should.have.schema(customerSchema);\r});\r});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1OSwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzMzgzNjI5MSwiZXhwIjoxNTM2NDY0MjkxLCJuYmYiOjE1MzM4MzYyOTEsImp0aSI6IkpMVktBV0dvWFdtVEQ4WVIifQ.yuoZdOz_2WvuDvCuZFfvDYxzVeUSQdUYhyqf745f-3s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1OSwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzMzgzNjI5MSwiZXhwIjoxNTM2NDY0MjkxLCJuYmYiOjE1MzM4MzYyOTEsImp0aSI6IkpMVktBV0dvWFdtVEQ4WVIifQ.yuoZdOz_2WvuDvCuZFfvDYxzVeUSQdUYhyqf745f-3s",
+							"sessionValue": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE1OSwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzMzgzNjI5MSwiZXhwIjoxNTM2NDY0MjkxLCJuYmYiOjE1MzM4MzYyOTEsImp0aSI6IkpMVktBV0dvWFdtVEQ4WVIifQ.yuoZdOz_2WvuDvCuZFfvDYxzVeUSQdUYhyqf745f-3s",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "Test",
+							"sessionValue": "Test",
+							"type": "text"
+						},
+						{
+							"key": "privacy",
+							"value": "public",
+							"sessionValue": "public",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "https://www.google.de/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiH8f6Cy-DcAhVLYVAKHQ1wCzYQ_AUICigB&biw=1440&bih=743#imgrc=SSHo4P2XhBrZTM:",
+							"sessionValue": "https://www.google.de/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiH8f6Cy-DcAhVLYVAKHQ1wCzYQ_AUICigB&biw=1440&bih=743#imgrc=SSHo4P2XhBrZTM:",
+							"type": "text"
+						},
+						{
+							"key": "thumb_image",
+							"value": "https://www.google.de/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiH8f6Cy-DcAhVLYVAKHQ1wCzYQ_AUICigB&biw=1440&bih=743#imgrc=SSHo4P2XhBrZTM:",
+							"sessionValue": "https://www.google.de/search?q=cats&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiH8f6Cy-DcAhVLYVAKHQ1wCzYQ_AUICigB&biw=1440&bih=743#imgrc=SSHo4P2XhBrZTM:",
+							"type": "text"
+						},
+						{
+							"key": "video_cover",
+							"value": "testtesttests",
+							"sessionValue": "testtesttests",
+							"type": "text"
+						},
+						{
+							"key": "industry_id[]",
+							"value": "1",
+							"sessionValue": "67676767",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "testiiiiiing",
+							"sessionValue": "testiiiiiing",
+							"type": "text"
+						},
+						{
+							"key": "categories_id[]",
+							"value": "1",
+							"sessionValue": "categories_id[]=1,categories_id[]=2",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "beginner",
+							"sessionValue": "beginner",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "english",
+							"sessionValue": "english",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://beta.diprella.com/api/course/create",
+					"protocol": "https",
+					"host": [
+						"beta",
+						"diprella",
+						"com"
+					],
+					"path": [
+						"api",
+						"course",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ee6b421f-8900-43ce-8044-bc61d2fec1e4",
+			"name": "POSTapi/course/bookmark",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01f35dff-fbe2-4965-b8cd-344c8178b960",
+						"type": "text/javascript",
+						"exec": [
+							"eval(globals.postmanBDD); \rdescribe('Get customer info', () => {\rit('should return a valid response', () => { \r    response.should.have.status(200); \r    response.should.be.json; \r    response.body.should.not.be.empty;\r });\rit('should set the Location header', () => { \r    response.should.have.header('Location');\r\r });\rit('should match the customer schema', () => {\r    var customerSchema = JSON.parse(environment.customerSchema); \r    response.body.should.have.schema(customerSchema);\r});\r});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIyMCwiaXNzIjoiaHR0cHM6Ly9iZXRhLmRpcHJlbGxhLmNvbS9hcGkvc2lnbl91cCIsImlhdCI6MTUzNDc1Mzc0MCwiZXhwIjoxNTM3MzgxNzQwLCJuYmYiOjE1MzQ3NTM3NDAsImp0aSI6IlVWMG9sbkNqZmJTdlh4V3AifQ.p0GopXdEtN2XaZ01rtrnsdyY1eWk93Zn6sNY9yuq1bo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/api/course/bookmark?course_id=12",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"course",
+						"bookmark"
+					],
+					"query": [
+						{
+							"key": "course_id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
