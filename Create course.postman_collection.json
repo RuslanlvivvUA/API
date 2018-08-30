@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "650cd30f-c127-4185-9976-cf956150f425",
+			"_postman_id": "24519334-1fc8-4fab-8560-eb5f8b466ac9",
 			"name": "POST sign_up",
 			"event": [
 				{
@@ -70,7 +70,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ecd27b6d-071b-4188-9aa4-1d709d01a6ab",
+			"_postman_id": "1d9a0897-699f-4e32-a470-026201568a98",
 			"name": "GET category/list",
 			"event": [
 				{
@@ -127,7 +127,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "644c90f2-332a-414f-a370-e5fd43040f62",
+			"_postman_id": "81649c23-028f-4695-b5d7-884afa8b48fe",
 			"name": "GET courses/list",
 			"event": [
 				{
@@ -176,7 +176,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "be9c11bc-5a1d-4283-bc94-6272a43b27dd",
+			"_postman_id": "cf14fd4f-1e3a-4e10-9822-7560511dc618",
 			"name": "GET course/progress?page=1",
 			"event": [
 				{
@@ -232,7 +232,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "12e1ec32-e565-4950-835c-588f02ae8505",
+			"_postman_id": "b0cfab2a-3b57-447a-a592-8d7cf59cbf9a",
 			"name": "PUT /profile/banner/view",
 			"event": [
 				{
@@ -331,7 +331,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c8bcbb1a-e31a-4a09-af12-1672463407c0",
+			"_postman_id": "8519f502-ab83-4dcb-ae94-1f3d999754e5",
 			"name": "POST course/create",
 			"event": [
 				{
@@ -448,7 +448,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "bcb2ce96-feb2-4fe6-bf85-effd6d3f9d8c",
+			"_postman_id": "dc60dcf5-3ccb-40f3-af04-b63d92006659",
 			"name": "POSTapi/course/bookmark",
 			"event": [
 				{
